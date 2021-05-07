@@ -1,0 +1,24 @@
+{
+
+  "manifest_version": 2,
+  "name": "Police-PR",
+  "version": "1.0",
+
+  "description": "bla",
+
+  "icons": {
+    "48": "icons/logo-48.png"
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/logo-48.png"
+    }
+  },
+  "background": {
+    "scripts": ["police_pr.js"]
+  },
+  "permissions": [
+    "tabs"
+  ]
+}

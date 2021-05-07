@@ -1,0 +1,220 @@
+body,html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+.top {
+  display: grid;
+  grid-template-areas: "logo logo header . ."
+    "logo logo search . ."
+    "logo logo shields . menu"
+    "logo logo shields . menu";
+  grid-template-columns: minmax(116px, 1fr) minmax(116px, 1fr) 6fr 1fr 1fr;  
+  grid-template-rows: 90px 60px 35px 35px;
+
+  border: 10px solid #004C91;
+  border-width: 0px 0px 10px 0px;
+}
+
+.topExtended {
+  display: grid;
+  grid-template-areas: "logo logo header . ."
+    "logo logo search . ."
+    "logo logo shields . menu"
+    "logo logo shields . menu";
+  grid-template-columns: minmax(116px, 1fr) minmax(116px, 1fr) 6fr 1fr 1fr;  
+  grid-template-rows: 90px 60px 250px 125px;
+
+  border: 10px solid #004C91;
+  border-width: 0px 0px 10px 0px;
+}
+
+#examples {
+  display: grid;
+  height: 55%;
+  grid-template-areas: "exampleHeader ex1 ex2"
+    "ex3 ex4 ex5"
+    "footer . .";
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 25px;
+  grid-gap: 10px;
+  grid-template-rows: min(50px, 250px) min(50px, 250px) 20px;
+}
+
+#exampleHeader {
+  grid-area: exampleHeader;
+  color: #004C91;
+}
+
+
+
+#ex1, #ex2, #ex3, #ex4, #ex5 {
+  border: 2px solid #004C91;
+  padding: 10px;
+}
+
+#logo {
+  grid-area: logo;
+  width: 230px;
+  position: relative;
+  top: 20px;
+}
+
+.searchbar {
+  grid-area: search;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.shields {
+  margin: 15px;
+  grid-area: shields;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". title body date loc.";
+}
+
+.shieldsExtended {
+  margin: 15px;
+  grid-area: shields;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "title title title title title title"
+                       "date  date date loc loc loc"
+		       "body body body body body body";
+}
+
+.shield-title {
+  grid-area: title;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border: solid #353b48;
+  border-width: 5px 30px 5px 5px;
+  color: white;
+  overflow:hidden;
+}
+
+.shield-green {
+  background-color: #004d00;
+}
+
+.shield-yellow {
+  background-color: #666600;
+}
+
+.shield-red {
+  background-color: #8B0000;
+}
+
+.shield-body {
+  grid-area: body;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border: solid #353b48;
+  border-width: 5px 30px 5px 5px;
+  color: white;
+  overflow:hidden;
+}
+
+.shield-date {
+  grid-area: date;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border: solid #353b48;
+  border-width: 5px 30px 5px 5px;
+  color: white;
+  overflow:hidden;
+}
+
+.shield-loc {
+  grid-area: loc;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  border: solid #353b48;
+  border-width: 5px 30px 5px 5px;
+  color: white;
+  overflow:hidden;
+}
+
+.heading {
+  grid-area: header;
+  color: white;
+  margin: 25px;
+}
+
+.search_input{
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  line-height: 40px;
+  padding: 0 10px;
+  width: 100%;
+  caret-color: #004C91;
+}
+
+.settings {
+  grid-area: menu;
+  border
+}
+
+.bla {
+  position: relative;
+  right: 10px;
+  bottom: -10px;
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #004C91;
+}
+
+.bla:hover {
+  background: #353b48;
+  color: white;
+  cursor: pointer;
+}
+
+.searchbar:hover > .search_icon{
+  background: white;
+  color: #004C91;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color:white;
+}
+
+.search-result {
+  margin: 2em 0;
+}
+
+#ranking {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.search-result-link {
+  color: #004C91 !important;
+}
+

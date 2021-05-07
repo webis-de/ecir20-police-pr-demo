@@ -1,0 +1,15 @@
+1_7 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+1_14 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+2_7 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+2_15 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+3_9 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+3_10 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+4_9 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+4_10 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+4_12 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+4_13 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+5_4 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+5_7 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+5_13 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+6_1 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch
+8_1 Q0 EMPTY_RANKING_DOCUMENT 1 0 blaulichtFullTextSearch

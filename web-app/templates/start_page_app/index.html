@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>Search Police-PR</title>
+    <meta charset="UTF-8">
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="/police-pr{% static 'main.css' %}">
+    <link rel="icon" type="image/png" href="/police-pr{% static 'logo.png' %}">
+    <script>
+      function bla() {
+        document.querySelectorAll('div[class="query-article-content"]').forEach(i => {
+          i.style="visibility: hidden";
+        });
+        document.getElementById('top-header').className = 'top'
+        document.getElementById('shields').className = 'shields'
+      }
+      function bla2() {
+        document.querySelectorAll('div[class="query-article-content"]').forEach(i => {
+          i.style="background: white; overflow: hidden; color:black;";
+        });
+        document.getElementById('top-header').className = 'topExtended'
+        document.getElementById('shields').className = 'shieldsExtended'
+      }
+      function toggleExtended() {
+        if ('topExtended' == document.getElementById('top-header').className) {
+          bla();
+        } else {
+          bla2();
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="top-header" class="top">
+	    <a href="/police-pr">
+	        <img id="logo" src="/police-pr{% static 'logo.png' %}">
+            </a>
+
+      <div class="searchbar d-flex justify-content-center h-100">
+	      <input class="search_input" type="text" name="news_article_url" value="{{news_article_url}}" placeholder="Enter Article URL..." onkeyup="document.querySelectorAll('a[class=\'search_icon\']')[0].href='/police-pr?search=' + encodeURIComponent(this.value); if (event.keyCode == 13) { window.location.href = '/police-pr?search=' + encodeURIComponent(this.value); return false; }"">
+        <a href="non-working-ranking.html" class="search_icon"><i class="fas fa-search"></i></a>
+      </div>
+
+      
+
+      <div id="shields" class="shields" {% if not shields %} style="visibility: hidden;" {% endif %} >
+        {% if shields %}
+	<!--https://fontawesome.com/icons/heading?style=solid-->
+        <div class="{{ shields.titel_class }}">
+          Title
+          <div class="query-article-content" style="visibility: hidden;">
+            {{ content.title }}
+          </div>
+	</div>
+        <div class="{{ shields.body_class }}">
+	<!--https://fontawesome.com/icons/book-open?style=solid-->
+          Body
+	  <div class="query-article-content" style="visibility: hidden;">
+	    {{ content.body }}
+	  </div>
+        </div>
+	<!--https://fontawesome.com/icons/clock?style=regular-->
+        <div class="{{ shields.date_class }}">
+          Date
+          <div  class="query-article-content" style="visibility: hidden;">
+            {{ content.date }}
+          </div>
+        </div>
+	<!--https://fontawesome.com/icons/compass?style=regular-->
+        <div class="{{ shields.loc_class }}">
+          Place
+          <div class="query-article-content" style="visibility: hidden;">
+            {{ content.place }}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      
+      <span class="settings" onclick="toggleExtended()">
+        <i class="fas fa-cog bla"></i>
+      </span>
+    </div>
+
+
+    {% if result_list %}
+    <div id="ranking">
+      {% for article in result_list %}
+      <article class="search-result">
+        <header>
+          <h2><a   class="search-result-link" href="{{ article.href }}"><em>{{ article.title }}</em></a></h2>
+          <div class="meta">
+            <a  class="search-result-link" href="{{ article.location_link }}" class="link">{{ article.location_name }}</a>
+          </div>
+        </header>
+          {{ article.snippet |safe}}
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+
+    {% if example_list %}
+    <div id='examples'>
+      <h1 id='exampleHeader'>Examples</h1>
+      {% for example in example_list %}
+      <a id='{{ example.id }}' href='/police-pr?search={{ example.href }}'>
+        <h2>{{ example.title }}</h2>
+	<img width="100%;" src="/police-pr/static/{{ example.id }}.png"/>
+      </a>
+      {% endfor %}
+      <a id="footer" href="/police-pr/static/screencast.mp4" style="padding: 10px;">Screencast</a>
+    </div>
+    {% endif %}
+
+  </body>
+</html>
+
